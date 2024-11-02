@@ -44,6 +44,9 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Print Sonar Host URL
+        run: echo $SONAR_HOST_URL
+
       - name: SonarQube scan
         env:
           SONAR_HOST_URL: "http://eugalde.ddns.net:9000"
