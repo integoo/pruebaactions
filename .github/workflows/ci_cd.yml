@@ -41,6 +41,9 @@ jobs:
       - name: Print Sonar Host URL
         run: echo $SONAR_HOST_URL
 
+      - name: List environment variables
+        run: env
+
       - name: Run SonarQube Scanner
         run: sonar-scanner
 
