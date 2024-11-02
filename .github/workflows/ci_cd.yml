@@ -38,11 +38,12 @@ jobs:
       - name: Check Java version
         run: java -version
 
+       - name: Check SonarQube connectivity
+         run: |
+           curl -I http://eugalde.ddns.net:9000
+
       - name: Print Sonar Host URL
         run: echo $SONAR_HOST_URL
-
-      - name: List environment variables
-        run: env
 
       - name: Run SonarQube Scanner
         run: sonar-scanner
