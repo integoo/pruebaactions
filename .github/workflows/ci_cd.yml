@@ -38,14 +38,14 @@ jobs:
       - name: Check Java version
         run: java -version
 
+      - name: Print Sonar Host URL
+        run: echo $SONAR_HOST_URL
+
       - name: Run SonarQube Scanner
         run: sonar-scanner
 
       - name: Run tests
         run: npm test
-
-      - name: Print Sonar Host URL
-        run: echo $SONAR_HOST_URL
 
       - name: SonarQube scan
         env:
