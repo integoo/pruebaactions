@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Puedes cambiar la versión según tu proyecto
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
@@ -96,3 +96,4 @@ jobs:
             cd $DEPLOY_PATH
             pm2 restart pruebaactions || pm2 start pruebaactions.js --name pruebaactions
 EOF
+
