@@ -9,7 +9,7 @@ app.use(express.json());
 
 // Ruta GET principal
 app.get('/', (req, res) => {
-  res.send('¡Bienvenido a mi aplicación con Express!');
+  res.send('¡Bienvenido a mi aplicación con Express y a GitHub Actions!');
 });
 
 // Ruta GET para obtener un mensaje de bienvenida con un nombre
