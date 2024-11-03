@@ -40,7 +40,6 @@ jobs:
       - name: Check SonarQube connectivity
         run: curl -I http://eugalde.ddns.net:9000
 
-
       - name: Print Sonar Host URL
         run: echo $SONAR_HOST_URL
 
@@ -49,7 +48,6 @@ jobs:
 
       - name: Run tests
         run: npm test
-
 
       - name: SonarQube scan
         env:
@@ -64,10 +62,10 @@ jobs:
             -Dsonar.host.url=$SONAR_HOST_URL \
             -X
 
-     deploy:
-       needs: sonarQubeAnalysis
-          if: ${{ success() }}
-          runs-on: ubuntu-latest
+  deploy:
+    needs: build-and-test
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v3
