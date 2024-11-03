@@ -96,5 +96,3 @@ jobs:
           ssh $SERVER_USER@$SERVER_IP << 'EOF'
             cd $DEPLOY_PATH
             pm2 restart pruebaactions || pm2 start pruebaactions.js --name pruebaactions
-EOF
-
