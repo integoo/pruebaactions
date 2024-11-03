@@ -56,7 +56,6 @@ jobs:
           SONAR_HOST_URL: "http://eugalde.ddns.net:9000"
           SONAR_USER: ${{ secrets.SONAR_USER }}
           SONAR_PASSWORD: ${{ secrets.SONAR_PASSWORD }}
-
         run: |
           npm install -g sonar-scanner
           sonar-scanner -Dsonar.login=$SONAR_USER -Dsonar.password=$SONAR_PASSWORD \
@@ -65,8 +64,8 @@ jobs:
             -Dsonar.host.url=$SONAR_HOST_URL \
             -X
 
-	deploy:
-          needs: sonarQubeAnalysis
+     deploy:
+       needs: sonarQubeAnalysis
           if: ${{ success() }}
           runs-on: ubuntu-latest
     steps:
