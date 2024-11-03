@@ -95,4 +95,5 @@ jobs:
           # Restart or start the application
           ssh $SERVER_USER@$SERVER_IP << 'EOF'
             cd $DEPLOY_PATH
-            pm2 restart pruebaactions || pm2 start pruebaactions.js --name pruebaactions
+            # pm2 restart pruebaactions || pm2 start pruebaactions.js --name pruebaactions
+            pm2 restart /home/interfaz/pruebaactions || pm2 start /home/interfaz/pruebaactions.js --name pruebaactions
